@@ -10,7 +10,7 @@ namespace SportStore.Domain.Entities
     {
         public Int32 ProductID { get; set; }
         public Decimal Price { get; set; }
-        public String Decription { get; set; }
+        public String Description { get; set; }
         public String Category { get; set; }
         public String Name { get; set; }
     }
