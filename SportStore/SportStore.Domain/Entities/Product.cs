@@ -12,10 +12,16 @@ namespace SportStore.Domain.Entities
     {
         [HiddenInput(DisplayValue = false)]
         public Int32 ProductID { get; set; }
+        [Required]
+        [Range(0.01, Double.MaxValue, ErrorMessage ="Please enter a positive price")]
         public Decimal Price { get; set; }
         [DataType(DataType.MultilineText)]
+        [Required(ErrorMessage ="Please enter a description")]
         public String Description { get; set; }
+        [Required(ErrorMessage ="Please specify a category")]
         public String Category { get; set; }
+
+        [Required(ErrorMessage ="Please enter a product name")]
         public String Name { get; set; }
     }
 }
