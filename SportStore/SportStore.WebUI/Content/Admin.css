@@ -16,18 +16,18 @@ div#content {
 
 table.Grid td, table.Grid th {
     border-bottom: 1px dotted gray;
-    text-align:left;
+    text-align: left;
 }
 
 table.Grid {
-    border-collapse: collapse; 
-    width:100%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-table.Grid th.NumericCol, table.Grid td.NumericCol {
-    text-align: right;
-    padding-right: 1em;
-}
+    table.Grid th.NumericCol, table.Grid td.NumericCol {
+        text-align: right;
+        padding-right: 1em;
+    }
 
 form {
     margin-bottom: 0px;
@@ -42,7 +42,7 @@ div.Message {
 
 .field-validation-error {
     color: red;
-    display:block;
+    display: block;
 }
 
 .field-validation-valid {
@@ -61,4 +61,25 @@ div.Message {
 
 .validation-summary-valid {
     display: none;
+}
+
+.editor-field {
+    margin-bottom: .8em;
+}
+
+.editor-label {
+    font-weight: bold;
+}
+
+    .editor-label::after {
+        content: ":";
+    }
+
+.text-box {
+    width: 25em;
+}
+
+.multi-line {
+    height: 5em;
+    font-family: Segoe UI, Verdana;
 }
