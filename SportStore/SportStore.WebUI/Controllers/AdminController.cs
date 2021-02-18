@@ -22,7 +22,7 @@ namespace SportStore.WebUI.Controllers
             return View(repository.Products);
         }
 
-        public ViewResult Edit(int productId)
+        public ViewResult Edit(Int32? productId)
         {
             Product product = repository.Products
                 .FirstOrDefault(p => p.ProductID == productId);
@@ -30,10 +30,16 @@ namespace SportStore.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Product product, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    product.ImageMimeType = image.ContentType;
+                    product.ImageData = new Byte[image.ContentLength];
+                    image.InputStream.Read(product.ImageData, 0, image.ContentLength);
+                }
                 repository.SaveProduct(product);
                 TempData["message"] = String.Format("{0} has been saved", product.Name);
                 return RedirectToAction("Index");

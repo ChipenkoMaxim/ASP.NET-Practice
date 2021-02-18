@@ -23,5 +23,10 @@ namespace SportStore.Domain.Entities
 
         [Required(ErrorMessage ="Please enter a product name")]
         public String Name { get; set; }
+
+        public Byte[] ImageData { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public String ImageMimeType { get; set; }
     }
 }
